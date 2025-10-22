@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwvl1y3s8utlm"]
+[gd_scene load_steps=4 format=3 uid="uid://dwvl1y3s8utlm"]
 
 [ext_resource type="PackedScene" uid="uid://hjkaf8qce5gp" path="res://scenes/player.tscn" id="1_0biqy"]
 [ext_resource type="PackedScene" uid="uid://cq5svdh3caf26" path="res://scenes/enemy.tscn" id="2_47u71"]
+[ext_resource type="PackedScene" uid="uid://bct11826q3a3f" path="res://scenes/insect.tscn" id="3_ywgp6"]
 
 [node name="GameWorld" type="Node2D"]
 
@@ -9,3 +10,6 @@
 position = Vector2(560, 251)
 
 [node name="Enemy" parent="." instance=ExtResource("2_47u71")]
+
+[node name="Insect" parent="." instance=ExtResource("3_ywgp6")]
+position = Vector2(1070, 545)
