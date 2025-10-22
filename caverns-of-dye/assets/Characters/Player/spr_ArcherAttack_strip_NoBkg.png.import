@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdsgiqtsha0k4"
-path="res://.godot/imported/spr_ArcherDash_strip_NoBkg.png-408d05e865256d30fea22d8cd6e679cb.ctex"
+uid="uid://dr3l3lo73o42r"
+path="res://.godot/imported/spr_ArcherAttack_strip_NoBkg.png-3b591ab3ca392db28b6158c54cace6a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spr_ArcherDash_strip_NoBkg.png"
-dest_files=["res://.godot/imported/spr_ArcherDash_strip_NoBkg.png-408d05e865256d30fea22d8cd6e679cb.ctex"]
+source_file="res://assets/Characters/Player/spr_ArcherAttack_strip_NoBkg.png"
+dest_files=["res://.godot/imported/spr_ArcherAttack_strip_NoBkg.png-3b591ab3ca392db28b6158c54cace6a6.ctex"]
 
 [params]
 

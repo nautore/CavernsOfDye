@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r77nf6h1ym6a"
-path="res://.godot/imported/spr_ArcherMelee_strip_NoBkg.png-30553008bf5997d60919b8f6693b330b.ctex"
+uid="uid://bushywbx50v4m"
+path="res://.godot/imported/Basic Arrow.png-344d9d529bb33025bfdb14bc6f54797e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spr_ArcherMelee_strip_NoBkg.png"
-dest_files=["res://.godot/imported/spr_ArcherMelee_strip_NoBkg.png-30553008bf5997d60919b8f6693b330b.ctex"]
+source_file="res://assets/Projectiles/Basic Arrow.png"
+dest_files=["res://.godot/imported/Basic Arrow.png-344d9d529bb33025bfdb14bc6f54797e.ctex"]
 
 [params]
 

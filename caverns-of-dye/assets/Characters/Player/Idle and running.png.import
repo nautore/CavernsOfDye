@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1g7gb0uc4i7e"
-path="res://.godot/imported/spr_ArcherRun_strip_NoBkg.png-07c2315dd91bb2c6a462b5ed593584af.ctex"
+uid="uid://c5fms14tjfyj4"
+path="res://.godot/imported/Idle and running.png-a5004aaf572fd5206abeb4057d203360.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spr_ArcherRun_strip_NoBkg.png"
-dest_files=["res://.godot/imported/spr_ArcherRun_strip_NoBkg.png-07c2315dd91bb2c6a462b5ed593584af.ctex"]
+source_file="res://assets/Characters/Player/Idle and running.png"
+dest_files=["res://.godot/imported/Idle and running.png-a5004aaf572fd5206abeb4057d203360.ctex"]
 
 [params]
 

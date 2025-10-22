@@ -1,21 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmg3agdhnsrhy"]
 
 [ext_resource type="Script" uid="uid://bge08hnmjd4o0" path="res://scripts/arrow.gd" id="1_23jat"]
-[ext_resource type="Texture2D" uid="uid://ic5tosil7414" path="res://icon.svg" id="1_umosx"]
+[ext_resource type="Texture2D" uid="uid://bushywbx50v4m" path="res://assets/Projectiles/Basic Arrow.png" id="2_23jat"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_umosx"]
-radius = 22.022715
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23jat"]
+radius = 9.0
+height = 36.0
 
 [node name="Arrow" type="Area2D"]
 script = ExtResource("1_23jat")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, 1)
-scale = Vector2(0.2890625, 0.2890625)
-texture = ExtResource("1_umosx")
+scale = Vector2(2.001831, 2.001831)
+texture = ExtResource("2_23jat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 3)
-shape = SubResource("CircleShape2D_umosx")
+position = Vector2(-1, 0)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_23jat")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

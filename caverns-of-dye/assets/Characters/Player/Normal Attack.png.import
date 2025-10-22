@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chdbjj6qvkyn5"
-path="res://.godot/imported/spr_ArcherDeath_strip_NoBkg.png-7e89dd7fe5f3836b3450b3b2eb16af18.ctex"
+uid="uid://bs7dtvk3jsy3u"
+path="res://.godot/imported/Normal Attack.png-2b3692f41dc1c151f87df76180b5bfcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spr_ArcherDeath_strip_NoBkg.png"
-dest_files=["res://.godot/imported/spr_ArcherDeath_strip_NoBkg.png-7e89dd7fe5f3836b3450b3b2eb16af18.ctex"]
+source_file="res://assets/Characters/Player/Normal Attack.png"
+dest_files=["res://.godot/imported/Normal Attack.png-2b3692f41dc1c151f87df76180b5bfcb.ctex"]
 
 [params]
 

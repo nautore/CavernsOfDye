@@ -16,9 +16,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0
 	else:
 		if(velocity.x != 0 || velocity.y != 0):
-			animation.play("run")
+			animation.play("run2")
 		else:
-			animation.play("idle")
+			animation.play("idle2")
 	#if(velocity.x != 0 || velocity.y != 0):
 		#if(animation.animation != "shoot"):
 			#animation.play("run")
@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 		
 	if(Input.is_action_just_pressed("shoot")):
 		isShooting = true
-		animation.play("shoot")
+		animation.play("shoot2")
 		
 
 	move_and_slide()
@@ -48,4 +48,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		var arrow = arrow_scene.instantiate()
 		arrow.global_position = global_position
 		arrow.direction = (get_global_mouse_position() - global_position).normalized()
+		arrow.look_at(get_global_mouse_position())
 		$/root/GameWorld.add_child(arrow)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7bdm3t8vcohh"
-path="res://.godot/imported/spr_ArcherJumpAndFall_strip_NoBkg.png-28674280605ca90da6f68bb4b6d1d9fc.ctex"
+uid="uid://r77nf6h1ym6a"
+path="res://.godot/imported/spr_ArcherMelee_strip_NoBkg.png-dc9ac7e279bee1fd2c1b09dcc29d59d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spr_ArcherJumpAndFall_strip_NoBkg.png"
-dest_files=["res://.godot/imported/spr_ArcherJumpAndFall_strip_NoBkg.png-28674280605ca90da6f68bb4b6d1d9fc.ctex"]
+source_file="res://assets/Characters/Player/spr_ArcherMelee_strip_NoBkg.png"
+dest_files=["res://.godot/imported/spr_ArcherMelee_strip_NoBkg.png-dc9ac7e279bee1fd2c1b09dcc29d59d0.ctex"]
 
 [params]
 
