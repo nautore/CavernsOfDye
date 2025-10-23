@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwvl1y3s8utlm"]
+[gd_scene load_steps=5 format=3 uid="uid://dwvl1y3s8utlm"]
 
 [ext_resource type="PackedScene" uid="uid://hjkaf8qce5gp" path="res://scenes/player.tscn" id="1_0biqy"]
 [ext_resource type="PackedScene" uid="uid://cq5svdh3caf26" path="res://scenes/enemy.tscn" id="2_47u71"]
 [ext_resource type="PackedScene" uid="uid://bct11826q3a3f" path="res://scenes/insect.tscn" id="3_ywgp6"]
+[ext_resource type="PackedScene" uid="uid://o4xq0q8ciqh" path="res://scenes/ui.tscn" id="4_0vfqx"]
 
 [node name="GameWorld" type="Node2D"]
 
@@ -10,6 +11,26 @@
 position = Vector2(560, 251)
 
 [node name="Enemy" parent="." instance=ExtResource("2_47u71")]
+position = Vector2(101, 79)
 
 [node name="Insect" parent="." instance=ExtResource("3_ywgp6")]
-position = Vector2(1070, 545)
+position = Vector2(716, 816)
+
+[node name="Insect2" parent="." instance=ExtResource("3_ywgp6")]
+position = Vector2(1458, 714)
+
+[node name="Insect3" parent="." instance=ExtResource("3_ywgp6")]
+position = Vector2(1509, 225)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_0vfqx")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -20.0
+offset_top = 31.0
+offset_right = -20.0
+offset_bottom = 31.0
+grow_vertical = 1

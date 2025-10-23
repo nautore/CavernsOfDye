@@ -55,3 +55,9 @@ frame_progress = 0.9447188
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yog2j")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.76
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
