@@ -1,6 +1,6 @@
 extends Control
 
-@onready var player = $/root/GameWorld/Player
+@onready var player = %Player
 
 func _process(delta: float) -> void:
-	$PanelContainer/Label.text = str(player.insects_captured)
+	$Panel/HBoxContainer/Label2.text = str(player.insects_captured)

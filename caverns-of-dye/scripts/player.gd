@@ -1,11 +1,17 @@
+class_name Player
 extends CharacterBody2D
 
 @export var speed = 200
 var can_shoot = true
 var is_lethal = true
-var insects_captured = 0
+
+@export var insects_captured:int = 0
+@onready var health:int = 100
+
 @onready var animation = $AnimatedSprite2D
 @onready var shoot_source = $ShootSource
+@onready var saver_loader = %SaverLoader
+
 @onready var arrow_scene = preload("res://scenes/arrow.tscn")
 @onready var net_scene = preload("res://scenes/net.tscn")
 
@@ -37,10 +43,15 @@ func _physics_process(delta: float) -> void:
 		animation.flip_h = false
 	
 	if(Input.is_action_just_pressed("quit")):
+		#saver_loader.save_game()
 		get_tree().quit()
 		
+	#if(Input.is_action_just_pressed("ui_accept")):
+		#saver_loader.load_game()
+		
 	var shoot_dir = get_global_mouse_position()
-	shoot_dir.y += 45
+	# DONT NEED after setting window to exclusive fullscreen
+	#shoot_dir.y += 45
 	shoot_source.look_at(shoot_dir)
 	
 	if(Input.is_action_just_pressed("shoot") && can_shoot):
@@ -69,7 +80,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			var net = net_scene.instantiate()
 			net.global_position = shoot_source.global_position
 			net.global_rotation = shoot_source.global_rotation
-			$/root/GameWorld.add_child(net)
+			$/root/Game.add_child(net)
 			
 func on_insect_capture():
 	insects_captured += 1

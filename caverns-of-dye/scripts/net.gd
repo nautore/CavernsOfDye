@@ -1,6 +1,5 @@
 extends Area2D
 
-var direction: Vector2
 const SPEED = 1000
 	
 
