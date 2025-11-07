@@ -44,7 +44,8 @@ func _physics_process(delta: float) -> void:
 	
 	if(Input.is_action_just_pressed("quit")):
 		#saver_loader.save_game()
-		get_tree().quit()
+		#get_tree().quit()
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		
 	#if(Input.is_action_just_pressed("ui_accept")):
 		#saver_loader.load_game()

@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp76a1iwkmqco"]
+
+[ext_resource type="Script" uid="uid://dwnos6d4w78vd" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameGuideContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="GuideTitle" type="Label" parent="PanelContainer/GameGuideContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+
+[node name="GuideContent" type="Label" parent="PanelContainer/GameGuideContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "CONTROLS:
+WASD: movement
+Left Click: shoot arrow
+Right Click: shoot net
+F: interact
+Escape: exit to main menu
+
+OBJECTIVE:
+Eliminate enemies with arrows, capture insects with nets (do not shoot with arrows), and sell them to the merchant."
+
+[node name="BackButton" type="Button" parent="PanelContainer/GameGuideContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "BACK"
+
+[node name="MenuContainer" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/MenuContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "CAVERNS OF DYE"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="PanelContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="GameGuideButton" type="Button" parent="PanelContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "How To Play"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/GameGuideContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MenuContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MenuContainer/GameGuideButton" to="." method="_on_game_guide_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MenuContainer/QuitButton" to="." method="_on_quit_button_pressed"]

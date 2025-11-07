@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CavernsOfDye"
-run/main_scene="uid://dwvl1y3s8utlm"
+run/main_scene="uid://dp76a1iwkmqco"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
