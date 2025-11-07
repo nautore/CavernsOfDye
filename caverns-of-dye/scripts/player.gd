@@ -6,11 +6,13 @@ var can_shoot = true
 var is_lethal = true
 
 @export var insects_captured:int = 0
+@export var gold:int = 0
 @onready var health:int = 100
 
 @onready var animation = $AnimatedSprite2D
 @onready var shoot_source = $ShootSource
 @onready var saver_loader = %SaverLoader
+@onready var merchant = %Merchant
 
 @onready var arrow_scene = preload("res://scenes/arrow.tscn")
 @onready var net_scene = preload("res://scenes/net.tscn")
@@ -46,6 +48,9 @@ func _physics_process(delta: float) -> void:
 		#saver_loader.save_game()
 		#get_tree().quit()
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		
+	if(Input.is_action_just_pressed("interact")):
+		merchant.interact()
 		
 	#if(Input.is_action_just_pressed("ui_accept")):
 		#saver_loader.load_game()

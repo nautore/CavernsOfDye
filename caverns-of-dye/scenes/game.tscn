@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwvl1y3s8utlm"]
+[gd_scene load_steps=9 format=3 uid="uid://dwvl1y3s8utlm"]
 
 [ext_resource type="Script" uid="uid://bh0l311ollawq" path="res://scripts/game.gd" id="1_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c42uytphj4eoi" path="res://scenes/world_root.tscn" id="2_gee14"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cq5svdh3caf26" path="res://scenes/enemy.tscn" id="3_gee14"]
 [ext_resource type="PackedScene" uid="uid://bct11826q3a3f" path="res://scenes/insect.tscn" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://o4xq0q8ciqh" path="res://scenes/ui.tscn" id="5_vtaks"]
+[ext_resource type="PackedScene" uid="uid://blkk67p7xt3hk" path="res://scenes/merchant.tscn" id="6_gee14"]
 [ext_resource type="Script" uid="uid://lwrr074pyufe" path="res://scripts/saver_loader/saver_loader.gd" id="6_kvpfn"]
 
 [node name="Game" type="Node2D"]
@@ -29,6 +30,10 @@ position = Vector2(1458, 714)
 
 [node name="Insect3" parent="WorldRoot" instance=ExtResource("4_0tnpc")]
 position = Vector2(1509, 225)
+
+[node name="Merchant" parent="WorldRoot" instance=ExtResource("6_gee14")]
+unique_name_in_owner = true
+position = Vector2(1044, 1021)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

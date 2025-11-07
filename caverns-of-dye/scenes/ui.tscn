@@ -34,3 +34,23 @@ text = "Insects Captured:"
 
 [node name="Label2" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 1183.0
+offset_top = 39.0
+offset_right = 1333.0
+offset_bottom = 79.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel2/HBoxContainer"]
+layout_mode = 2
+text = "Gold:"
+
+[node name="Label2" type="Label" parent="Panel2/HBoxContainer"]
+layout_mode = 2

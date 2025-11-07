@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameGuideContainer" type="VBoxContainer" parent="PanelContainer"]
+visible = false
 layout_mode = 2
 
 [node name="GuideTitle" type="Label" parent="PanelContainer/GameGuideContainer"]
@@ -47,7 +48,6 @@ theme_override_font_sizes/font_size = 50
 text = "BACK"
 
 [node name="MenuContainer" type="VBoxContainer" parent="PanelContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Title" type="Label" parent="PanelContainer/MenuContainer"]
