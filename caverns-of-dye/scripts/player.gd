@@ -4,10 +4,13 @@ extends CharacterBody2D
 @export var speed = 200
 var can_shoot = true
 var is_lethal = true
+var is_invincible = false
 
 @export var insects_captured:int = 0
 @export var gold:int = 0
+@export var nets:int = 2
 @onready var health:int = 100
+
 
 @onready var animation = $AnimatedSprite2D
 @onready var shoot_source = $ShootSource
@@ -27,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = Input.get_axis("left", "right") * speed
 	velocity.y = Input.get_axis("up", "down") * speed
+	
 	
 	if(!can_shoot):
 		#velocity.x = 0
@@ -65,12 +69,17 @@ func _physics_process(delta: float) -> void:
 		is_lethal = true
 		animation.play("shoot2")
 	if(Input.is_action_just_pressed("throw") && can_shoot):
-		can_shoot = false
-		is_lethal = false
-		animation.play("shoot2")
+		if(nets >= 1):
+			can_shoot = false
+			is_lethal = false
+			animation.play("shoot2")
 
 	move_and_slide()
-	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var object = collision.get_collider()
+		if(object.is_in_group("enemies")):
+			get_hit()
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -90,4 +99,16 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			
 func on_insect_capture():
 	insects_captured += 1
+	nets -= 1
 	print_debug(insects_captured)
+
+func get_hit():
+	if(!is_invincible):
+		is_invincible = true
+		$InvincibilityTimer.start()
+		health -= 25
+		if(health <= 0):
+			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		
+func _on_invincibility_timer_timeout() -> void:
+	is_invincible = false

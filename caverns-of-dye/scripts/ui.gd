@@ -5,3 +5,5 @@ extends Control
 func _process(delta: float) -> void:
 	$Panel/HBoxContainer/Label2.text = str(player.insects_captured)
 	$Panel2/HBoxContainer/Label2.text = str(player.gold)
+	$Panel3/HBoxContainer/Label2.text = str(player.health)
+	$Panel4/HBoxContainer/Label2.text = str(player.nets)
