@@ -40,7 +40,8 @@ F: interact
 Escape: exit to main menu
 
 OBJECTIVE:
-Eliminate enemies with arrows, capture insects with nets (do not shoot with arrows), and sell them to the merchant."
+Head into the cave, eliminate enemies with arrows, and capture insects with nets (do not shoot with arrows).
+Exit the cave and sell insects by interacting with the merchant to gain gold."
 
 [node name="BackButton" type="Button" parent="PanelContainer/GameGuideContainer"]
 layout_mode = 2

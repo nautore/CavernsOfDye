@@ -15,19 +15,18 @@ var is_invincible = false
 @onready var animation = $AnimatedSprite2D
 @onready var shoot_source = $ShootSource
 @onready var saver_loader = %SaverLoader
-@onready var merchant = %Merchant
+#@onready var merchant = %Merchant
 
 @onready var arrow_scene = preload("res://scenes/arrow.tscn")
 @onready var net_scene = preload("res://scenes/net.tscn")
 
-func _ready():
-	var insects = get_tree().get_nodes_in_group("insects")
-	for insect in insects:
-		insect.connect("captured", Callable(self, "on_insect_capture"))
 
+func _ready():	
+	#var insects = get_tree().get_nodes_in_group("insects")
+	#for insect in insects:
+		#insect.connect("captured", Callable(self, "on_insect_capture"))
+	connect_insects()
 func _physics_process(delta: float) -> void:
-	
-	
 	velocity.x = Input.get_axis("left", "right") * speed
 	velocity.y = Input.get_axis("up", "down") * speed
 	
@@ -54,6 +53,7 @@ func _physics_process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		
 	if(Input.is_action_just_pressed("interact")):
+		var merchant = get_tree().get_first_node_in_group("merchant")
 		merchant.interact()
 		
 	#if(Input.is_action_just_pressed("ui_accept")):
@@ -109,6 +109,11 @@ func get_hit():
 		health -= 25
 		if(health <= 0):
 			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+			
+func connect_insects():
+	var insects = get_tree().get_nodes_in_group("insects")
+	for insect in insects:
+		insect.connect("captured", Callable(self, "on_insect_capture"))
 		
 func _on_invincibility_timer_timeout() -> void:
 	is_invincible = false

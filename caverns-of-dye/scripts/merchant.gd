@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@onready var player = %Player
+@onready var player = $/root/Game/WorldRoot/Player
 @onready var can_interact = false
 
 func interact():
