@@ -34,3 +34,61 @@ text = "Insects Captured:"
 
 [node name="Label2" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 1343.0
+offset_top = 27.0
+offset_right = 1493.0
+offset_bottom = 67.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel2/HBoxContainer"]
+layout_mode = 2
+text = "Gold:"
+
+[node name="Label2" type="Label" parent="Panel2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1143.0
+offset_top = 27.0
+offset_right = 1281.0
+offset_bottom = 67.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel3/HBoxContainer"]
+layout_mode = 2
+text = "Health:"
+
+[node name="Label2" type="Label" parent="Panel3/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1557.0
+offset_top = 27.0
+offset_right = 1695.0
+offset_bottom = 67.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel4/HBoxContainer"]
+layout_mode = 2
+text = "Nets"
+
+[node name="Label2" type="Label" parent="Panel4/HBoxContainer"]
+layout_mode = 2

@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://blkk67p7xt3hk"]
+
+[ext_resource type="Script" uid="uid://bci0vub41q1ii" path="res://scripts/merchant.gd" id="1_12ke4"]
+[ext_resource type="Texture2D" uid="uid://bc48f4eyfh6ot" path="res://assets/Characters/NPC/Idle Working.png" id="2_12ke4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v18v5"]
+radius = 196.94669
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v18v5"]
+size = Vector2(61, 84.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rnkl"]
+atlas = ExtResource("2_12ke4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xj0k"]
+atlas = ExtResource("2_12ke4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gj23"]
+atlas = ExtResource("2_12ke4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krsg3"]
+atlas = ExtResource("2_12ke4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp888"]
+atlas = ExtResource("2_12ke4")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1kdm"]
+atlas = ExtResource("2_12ke4")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghsth"]
+atlas = ExtResource("2_12ke4")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olu2c"]
+atlas = ExtResource("2_12ke4")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0sul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rnkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xj0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gj23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krsg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp888")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1kdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghsth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olu2c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Merchant" type="StaticBody2D" groups=["merchant"]]
+script = ExtResource("1_12ke4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_v18v5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_v18v5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.0000019, 1.9073486e-06)
+scale = Vector2(2.6054688, 2.6054688)
+sprite_frames = SubResource("SpriteFrames_m0sul")
+autoplay = "default"
+frame = 2
+frame_progress = 0.5125997
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

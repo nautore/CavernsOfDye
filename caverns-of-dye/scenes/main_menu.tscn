@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameGuideContainer" type="VBoxContainer" parent="PanelContainer"]
+visible = false
 layout_mode = 2
 
 [node name="GuideTitle" type="Label" parent="PanelContainer/GameGuideContainer"]
@@ -39,7 +40,8 @@ F: interact
 Escape: exit to main menu
 
 OBJECTIVE:
-Eliminate enemies with arrows, capture insects with nets (do not shoot with arrows), and sell them to the merchant."
+Head into the cave, eliminate enemies with arrows, and capture insects with nets (do not shoot with arrows).
+Exit the cave and sell insects by interacting with the merchant to gain gold."
 
 [node name="BackButton" type="Button" parent="PanelContainer/GameGuideContainer"]
 layout_mode = 2
@@ -47,7 +49,6 @@ theme_override_font_sizes/font_size = 50
 text = "BACK"
 
 [node name="MenuContainer" type="VBoxContainer" parent="PanelContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Title" type="Label" parent="PanelContainer/MenuContainer"]

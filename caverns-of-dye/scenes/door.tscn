@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce8tbnebaccak"]
+
+[ext_resource type="Script" uid="uid://b2jjltpt6pfxk" path="res://scripts/door.gd" id="1_hpvv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f452"]
+size = Vector2(177, 101)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_hpvv5")
+next_level = "safe_zone"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(73, 18)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-199, 24, -144, -81, 10, -80, 57, 24)
+uv = PackedVector2Array(-215, 35, -144, -81, 10, -80, 57, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, -11.5)
+shape = SubResource("RectangleShape2D_5f452")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

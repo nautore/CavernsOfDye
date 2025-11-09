@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var SPEED = 40
 var health = 100
-@onready var player = %Player
+@onready var player = $/root/Game/WorldRoot/Player
 
 func _physics_process(delta: float) -> void:
 	velocity = (player.global_position - global_position).normalized() * SPEED

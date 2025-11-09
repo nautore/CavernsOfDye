@@ -10,6 +10,8 @@ func save_game():
 	saved_game.player_position = player.global_position
 	saved_game.insects_captured = player.insects_captured
 	saved_game.player_health = player.health
+	saved_game.gold = player.gold
+	saved_game.nets = player.nets
 	
 	# write the savegame to disk
 	ResourceSaver.save(saved_game, "user://savegame.tres")
@@ -28,6 +30,10 @@ func load_game():
 	player.insects_captured = saved_game.insects_captured
 	# restore player health
 	player.health = saved_game.player_health
+	# restore player gold
+	player.gold = saved_game.gold
+	# restore player nets
+	player.nets = saved_game.nets
 
 func _on_save_button_pressed() -> void:
 	save_game()
