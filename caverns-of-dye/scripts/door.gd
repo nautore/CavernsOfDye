@@ -16,3 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 		#Global.game.change_scene(Global.levels.get(next_level))
 		if(!locked):
 			Global.game.call_deferred("change_scene", Global.levels.get(next_level))
+			if(next_level == "safe_zone"):
+				GlobalAudio.play_music("background_music")
+			else:
+				GlobalAudio.play_music("cave_music")
