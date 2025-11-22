@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = false
 	move_and_slide()
 func get_captured():
+	GlobalAudio.play_sound("insect_capture")
 	emit_signal("captured")
 	queue_free()
 	

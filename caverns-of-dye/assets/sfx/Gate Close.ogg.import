@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfh2cm6uov1sc"
+path="res://.godot/imported/Gate Close.ogg-65314b77e32095cf2a22bbe9d76ddefb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/Gate Close.ogg"
+dest_files=["res://.godot/imported/Gate Close.ogg-65314b77e32095cf2a22bbe9d76ddefb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -43,6 +43,7 @@ animations = [{
 radius = 22.022715
 
 [node name="Insect" type="CharacterBody2D" groups=["insects"]]
+motion_mode = 1
 script = ExtResource("1_bb1u4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

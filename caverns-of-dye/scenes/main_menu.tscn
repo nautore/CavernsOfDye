@@ -75,7 +75,11 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
+[connection signal="mouse_entered" from="PanelContainer/GameGuideContainer/BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/GameGuideContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/MenuContainer/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/MenuContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/MenuContainer/GameGuideButton" to="." method="_on_game_guide_button_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/MenuContainer/GameGuideButton" to="." method="_on_game_guide_button_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/MenuContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/MenuContainer/QuitButton" to="." method="_on_quit_button_pressed"]
