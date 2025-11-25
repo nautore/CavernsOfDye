@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv2ex38a8tl64"]
+
+[ext_resource type="PackedScene" uid="uid://ce8tbnebaccak" path="res://scenes/door.tscn" id="1_j2425"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j2425"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g2h2n"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ra442"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fiq81"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Door" parent="." instance=ExtResource("1_j2425")]
+position = Vector2(135, 538)
+inCave = true
+next_level = "level_0"
+next_player_x = 1750
+next_player_y = 700
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("WorldBoundaryShape2D_j2425")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+shape = SubResource("WorldBoundaryShape2D_g2h2n")
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+position = Vector2(1920, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+shape = SubResource("WorldBoundaryShape2D_ra442")
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2(0, 1080)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+shape = SubResource("WorldBoundaryShape2D_fiq81")

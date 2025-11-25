@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://crda150sg2lkg"]
+
+[ext_resource type="PackedScene" uid="uid://cq5svdh3caf26" path="res://scenes/enemy.tscn" id="1_osc7o"]
+[ext_resource type="PackedScene" uid="uid://bct11826q3a3f" path="res://scenes/insect.tscn" id="2_wjk5u"]
+[ext_resource type="PackedScene" uid="uid://ce8tbnebaccak" path="res://scenes/door.tscn" id="3_xy1qu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yautc"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fr1um"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v45ci"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_48ne7"]
+
+[node name="Level0" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_osc7o")]
+position = Vector2(1544, 144)
+
+[node name="Enemy4" parent="." instance=ExtResource("1_osc7o")]
+position = Vector2(1456, 430)
+
+[node name="Enemy3" parent="." instance=ExtResource("1_osc7o")]
+position = Vector2(1033, 304)
+
+[node name="Enemy2" parent="." instance=ExtResource("1_osc7o")]
+position = Vector2(467, 125)
+
+[node name="Insect" parent="." instance=ExtResource("2_wjk5u")]
+position = Vector2(1679, 425)
+
+[node name="Insect3" parent="." instance=ExtResource("2_wjk5u")]
+position = Vector2(612, 371)
+
+[node name="Insect2" parent="." instance=ExtResource("2_wjk5u")]
+position = Vector2(363, 330)
+
+[node name="ToSafeZone" parent="." instance=ExtResource("3_xy1qu")]
+position = Vector2(1021, 1038)
+inCave = true
+next_player_x = 1800
+next_player_y = 700
+
+[node name="ToLevel1" parent="." instance=ExtResource("3_xy1qu")]
+position = Vector2(129, 540)
+inCave = true
+next_level = "level_1"
+next_player_x = 1800
+next_player_y = 750
+
+[node name="ToLevel2" parent="." instance=ExtResource("3_xy1qu")]
+position = Vector2(1784, 528)
+inCave = true
+next_level = "level_2"
+next_player_x = 500
+next_player_y = 650
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("WorldBoundaryShape2D_yautc")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+shape = SubResource("WorldBoundaryShape2D_fr1um")
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+position = Vector2(1920, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+shape = SubResource("WorldBoundaryShape2D_v45ci")
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2(0, 1080)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+shape = SubResource("WorldBoundaryShape2D_48ne7")

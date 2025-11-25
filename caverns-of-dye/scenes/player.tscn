@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://hjkaf8qce5gp"]
+[gd_scene load_steps=64 format=3 uid="uid://hjkaf8qce5gp"]
 
 [ext_resource type="Texture2D" uid="uid://f6pdy5n5nxv" path="res://assets/Characters/Player/spr_ArcherIdle_strip_NoBkg.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://b0ij80qe2vhd3" path="res://scripts/player.gd" id="1_g2els"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c5fms14tjfyj4" path="res://assets/Characters/Player/Idle and running.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dr3l3lo73o42r" path="res://assets/Characters/Player/spr_ArcherAttack_strip_NoBkg.png" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bs7dtvk3jsy3u" path="res://assets/Characters/Player/Normal Attack.png" id="6_tuyoq"]
-[ext_resource type="AudioStream" uid="uid://beu860plpw0vf" path="res://assets/sfx/Bow Attack 1.ogg" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g5jhy"]
 atlas = ExtResource("2_smehm")
@@ -451,10 +450,6 @@ shape = SubResource("CircleShape2D_tuyoq")
 [node name="InvincibilityTimer" type="Timer" parent="."]
 wait_time = 0.7
 one_shot = true
-
-[node name="sfx_shoot" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_fjrip")
-volume_db = -10.541
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

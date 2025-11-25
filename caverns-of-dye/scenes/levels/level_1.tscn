@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://xo268edwon8t"]
+
+[ext_resource type="PackedScene" uid="uid://cq5svdh3caf26" path="res://scenes/enemy.tscn" id="1_6iamk"]
+[ext_resource type="PackedScene" uid="uid://bct11826q3a3f" path="res://scenes/insect.tscn" id="2_nsrm0"]
+[ext_resource type="PackedScene" uid="uid://ce8tbnebaccak" path="res://scenes/door.tscn" id="3_nsrm0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7u6i3"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ksju7"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6iamk"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nsrm0"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("WorldBoundaryShape2D_7u6i3")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+shape = SubResource("WorldBoundaryShape2D_ksju7")
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+position = Vector2(1920, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+shape = SubResource("WorldBoundaryShape2D_6iamk")
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2(0, 1080)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+shape = SubResource("WorldBoundaryShape2D_nsrm0")
+
+[node name="Enemy" parent="." instance=ExtResource("1_6iamk")]
+position = Vector2(736, 821)
+
+[node name="Enemy2" parent="." instance=ExtResource("1_6iamk")]
+position = Vector2(391, 434)
+
+[node name="Enemy3" parent="." instance=ExtResource("1_6iamk")]
+position = Vector2(534, 137)
+
+[node name="Enemy4" parent="." instance=ExtResource("1_6iamk")]
+position = Vector2(1169, 222)
+
+[node name="Insect" parent="." instance=ExtResource("2_nsrm0")]
+position = Vector2(1010, 248)
+
+[node name="Door" parent="." instance=ExtResource("3_nsrm0")]
+position = Vector2(1800, 516)
+inCave = true
+next_level = "level_0"
+next_player_x = 520
+next_player_y = 500
