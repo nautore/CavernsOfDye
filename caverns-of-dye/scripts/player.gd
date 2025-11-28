@@ -1,18 +1,26 @@
 class_name Player
 extends CharacterBody2D
 
-@export var speed = 200
+@export var speed = 230
+@export var dash_speed = 500
+@export var dash_duration = 0.4
+@export var dash_cooldown = 1
 var can_shoot = true
 var is_lethal = true
 var is_invincible = false
 var dying = false
 var can_play_step_sound = true
+var is_dashing = false
+var can_dash = true
+var dash_timer = 0
+
 
 @export var insects_captured:int = 0
-@export var gold:int = 0
-@export var nets:int = 2
-@onready var health:int = 100
-
+@export var gold:int = 40
+@export var nets:int = 5
+@export var max_nets:int = 5
+@export var health:int = 100
+@export var max_health:int = 100
 
 @onready var animation = $AnimatedSprite2D
 @onready var shoot_source = $ShootSource
@@ -43,9 +51,21 @@ func _physics_process(delta: float) -> void:
 			step_timer.connect("timeout", Callable(self, "_on_step_timer_timeout"))
 			can_play_step_sound = false
 	
-	velocity.x = Input.get_axis("left", "right") * speed
-	velocity.y = Input.get_axis("up", "down") * speed
+	# old velocity code
+	#velocity.x = Input.get_axis("left", "right") * speed
+	#velocity.y = Input.get_axis("up", "down") * speed
 	
+	# new velocity code
+	var direction = Input.get_vector("left", "right", "up", "down")
+	if(!is_dashing):
+		velocity = direction * speed
+		if Input.is_action_just_pressed("dash") and can_dash:
+			start_dash(direction)
+	else:
+		velocity = direction * dash_speed
+		dash_timer -= delta
+		if dash_timer <= 0:
+			end_dash()
 	
 	if(!can_shoot):
 		#velocity.x = 0
@@ -54,9 +74,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		speed = 200
 		if(velocity.x != 0 || velocity.y != 0):
-			animation.play("run2")
+			if(!is_dashing):
+				animation.play("run2")
 		else:
-			animation.play("idle2")
+			if(!is_dashing):
+				animation.play("idle2")
 
 	if(Input.is_action_just_pressed("left")):
 		animation.flip_h = true
@@ -104,11 +126,13 @@ func _physics_process(delta: float) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if(animation.animation == "death"):
+		Global.in_cave = false
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		return
 	
-	GlobalAudio.play_sound("shoot")
-	if(!can_shoot):
+	
+	if(!can_shoot && animation.animation == "shoot2"):
+		GlobalAudio.play_sound("shoot")
 		can_shoot = true
 		# check whether to shoot arrow or throw net
 		if(is_lethal):
@@ -143,6 +167,10 @@ func connect_insects():
 	var insects = get_tree().get_nodes_in_group("insects")
 	for insect in insects:
 		insect.connect("captured", Callable(self, "on_insect_capture"))
+
+func kill():
+	health = 1
+	get_hit()
 		
 func _on_invincibility_timer_timeout() -> void:
 	is_invincible = false
@@ -150,3 +178,29 @@ func _on_invincibility_timer_timeout() -> void:
 
 func _on_step_timer_timeout() -> void:
 	can_play_step_sound = true
+	
+func start_dash(direction):
+	is_dashing = true
+	can_dash = false
+	dash_timer = dash_duration
+	can_shoot = false
+	
+	#animation.play("dash")
+	GlobalAudio.play_sound("dash")
+	
+	# If no direction is inputted, dash forward
+	if direction == Vector2.ZERO:
+		velocity = Vector2(1, 0) * dash_speed  # Dash to the right by default
+	else:
+		velocity = direction * dash_speed
+		
+	var dash_cooldown_timer = get_tree().create_timer(dash_cooldown)
+	dash_cooldown_timer.connect("timeout", Callable(self, "_on_dash_cooldown_timer_timeout"))
+	
+func end_dash():
+	is_dashing = false
+	can_shoot = true
+	
+func _on_dash_cooldown_timer_timeout() -> void:
+	can_dash = true
+	

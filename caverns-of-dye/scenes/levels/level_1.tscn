@@ -56,7 +56,6 @@ position = Vector2(1010, 248)
 
 [node name="Door" parent="." instance=ExtResource("3_nsrm0")]
 position = Vector2(1800, 516)
-inCave = true
 next_level = "level_0"
 next_player_x = 520
 next_player_y = 500

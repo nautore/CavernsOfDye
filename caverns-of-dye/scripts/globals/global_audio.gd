@@ -17,6 +17,7 @@ var curr_music
 @onready var sfx_run4 = preload("res://assets/sfx/Stone Run 4.ogg")
 @onready var sfx_run5 = preload("res://assets/sfx/Stone Run 5.ogg")
 @onready var sfx_denied = preload("res://assets/sfx/033_Denied_03.wav")
+@onready var sfx_dash = preload("res://assets/sfx/15_human_dash_1.wav")
 
 # Music
 @onready var music_background = preload("res://assets/music/Sketchbook 2024-12-04.ogg")
@@ -66,6 +67,9 @@ func play_sound(sound_name: String):
 		"denied":
 			instance.stream = sfx_denied
 			instance.volume_db = -2
+		"dash":
+			instance.stream = sfx_dash
+			instance.volume_db = -8
 	instance.finished.connect(remove_sound.bind(instance))
 	add_child(instance)
 	instance.play()

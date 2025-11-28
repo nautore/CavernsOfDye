@@ -25,9 +25,15 @@ func change_scene(new_scene: String):
 	player.connect_insects()
 	
 	# reset enteredLevels when entering safe_zone
+	# also reset health and nets
 	if(new_scene == "safe_zone"):
 		for key in Global.enteredLevels:
 			Global.enteredLevels.set(key, false)
+		player.health = player.max_health
+		player.nets = player.max_nets
+		player.gold = player.gold - 20
+		if(player.gold < 0):
+			player.kill()
 		return
 	
 	# cleared already entered levels of enemies and insects

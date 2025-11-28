@@ -14,6 +14,7 @@ var levels : Dictionary = { "safe_zone": "res://scenes/levels/safe_zone.tscn",
 							"level_10": "res://scenes/levels/level_10.tscn"
 							}
 var game : Game
+var in_cave = false
 
 var enteredLevels : Dictionary = {  "level_0": false,
 									"level_1": false,

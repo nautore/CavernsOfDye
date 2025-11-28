@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = 40
+var SPEED = 150
 var health = 100
 var dying = false
 @onready var player = $/root/Game/WorldRoot/Player

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var inCave:bool = false
+#@export var in_cave:bool = false
 @export var next_level:String
 @export var next_player_x:int
 @export var next_player_y:int
@@ -36,9 +36,11 @@ func _on_body_entered(body: Node2D) -> void:
 			Global.game.call_deferred("change_scene", next_level)
 			if(next_level == "safe_zone"):
 				GlobalAudio.play_music("background_music")
+				Global.in_cave = false
 			else:
 				# only start cave music when entering cave for the first time
-				if(!inCave):
+				if(!Global.in_cave):
 					GlobalAudio.play_music("cave_music")
+					Global.in_cave = true
 func _on_transition_timer_timeout() -> void:
 	can_transition = true
