@@ -10,6 +10,8 @@ func interact():
 			var earned_gold = player.insects_captured * 10
 			player.gold = player.gold + earned_gold
 			player.insects_captured = 0
+			if(player.gold >= 0):
+				player.in_debt = false
 		else:
 			GlobalAudio.play_sound("denied")
 

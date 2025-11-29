@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv2ex38a8tl64"]
+[gd_scene load_steps=8 format=3 uid="uid://cv2ex38a8tl64"]
 
 [ext_resource type="PackedScene" uid="uid://ce8tbnebaccak" path="res://scenes/door.tscn" id="1_j2425"]
+[ext_resource type="PackedScene" uid="uid://bct11826q3a3f" path="res://scenes/insect.tscn" id="2_ra442"]
+[ext_resource type="PackedScene" uid="uid://cq5svdh3caf26" path="res://scenes/enemy.tscn" id="3_fiq81"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j2425"]
 normal = Vector2(0, 1)
@@ -17,7 +19,6 @@ normal = Vector2(-1, 0)
 
 [node name="Door" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(135, 538)
-inCave = true
 next_level = "level_0"
 next_player_x = 1750
 next_player_y = 700
@@ -43,3 +44,35 @@ position = Vector2(0, 1080)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
 shape = SubResource("WorldBoundaryShape2D_fiq81")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1867.0
+offset_top = -1.0
+offset_right = 1907.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 50
+text = "2"
+
+[node name="Door2" parent="." instance=ExtResource("1_j2425")]
+position = Vector2(1023, 61)
+next_level = "level_5"
+next_player_x = 1000
+next_player_y = 850
+
+[node name="Insect" parent="." instance=ExtResource("2_ra442")]
+position = Vector2(1014, 533)
+
+[node name="Enemy" parent="." instance=ExtResource("3_fiq81")]
+position = Vector2(967, 821)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_fiq81")]
+position = Vector2(1283, 632)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_fiq81")]
+position = Vector2(698, 641)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_fiq81")]
+position = Vector2(1146, 340)
+
+[node name="Enemy5" parent="." instance=ExtResource("3_fiq81")]
+position = Vector2(790, 361)

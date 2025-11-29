@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://wt4ryf7loqyw"]
+
+[ext_resource type="PackedScene" uid="uid://ce8tbnebaccak" path="res://scenes/door.tscn" id="1_o8c3j"]
+[ext_resource type="PackedScene" uid="uid://bct11826q3a3f" path="res://scenes/insect.tscn" id="2_0ljxa"]
+[ext_resource type="PackedScene" uid="uid://cq5svdh3caf26" path="res://scenes/enemy.tscn" id="3_0qepi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rkukh"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o8c3j"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_44gv1"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ljxa"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("WorldBoundaryShape2D_rkukh")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+shape = SubResource("WorldBoundaryShape2D_o8c3j")
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+position = Vector2(1920, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+shape = SubResource("WorldBoundaryShape2D_44gv1")
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2(0, 1080)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+shape = SubResource("WorldBoundaryShape2D_0ljxa")
+
+[node name="Door" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(982, 1040)
+next_level = "level_1"
+next_player_x = 1000
+next_player_y = 270
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1867.0
+offset_top = -1.0
+offset_right = 1907.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[node name="Door2" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1785, 495)
+next_level = "level_4"
+next_player_x = 470
+next_player_y = 500
+
+[node name="Insect" parent="." instance=ExtResource("2_0ljxa")]
+position = Vector2(1068, 457)
+
+[node name="Insect2" parent="." instance=ExtResource("2_0ljxa")]
+position = Vector2(934, 264)
+
+[node name="Insect3" parent="." instance=ExtResource("2_0ljxa")]
+position = Vector2(818, 457)
+
+[node name="Enemy" parent="." instance=ExtResource("3_0qepi")]
+position = Vector2(1288, 429)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_0qepi")]
+position = Vector2(1302, 658)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_0qepi")]
+position = Vector2(630, 203)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_0qepi")]
+position = Vector2(651, 644)
+
+[node name="Enemy5" parent="." instance=ExtResource("3_0qepi")]
+position = Vector2(1201, 191)

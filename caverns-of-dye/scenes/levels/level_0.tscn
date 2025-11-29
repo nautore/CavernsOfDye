@@ -18,16 +18,16 @@ normal = Vector2(-1, 0)
 [node name="Level0" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource("1_osc7o")]
-position = Vector2(1544, 144)
+position = Vector2(1492, 278)
 
 [node name="Enemy4" parent="." instance=ExtResource("1_osc7o")]
-position = Vector2(1456, 430)
+position = Vector2(1399, 579)
 
 [node name="Enemy3" parent="." instance=ExtResource("1_osc7o")]
 position = Vector2(1033, 304)
 
 [node name="Enemy2" parent="." instance=ExtResource("1_osc7o")]
-position = Vector2(467, 125)
+position = Vector2(547, 608)
 
 [node name="Insect" parent="." instance=ExtResource("2_wjk5u")]
 position = Vector2(1679, 425)
@@ -35,25 +35,19 @@ position = Vector2(1679, 425)
 [node name="Insect3" parent="." instance=ExtResource("2_wjk5u")]
 position = Vector2(612, 371)
 
-[node name="Insect2" parent="." instance=ExtResource("2_wjk5u")]
-position = Vector2(363, 330)
-
 [node name="ToSafeZone" parent="." instance=ExtResource("3_xy1qu")]
 position = Vector2(1021, 1038)
-inCave = true
 next_player_x = 1800
 next_player_y = 700
 
 [node name="ToLevel1" parent="." instance=ExtResource("3_xy1qu")]
 position = Vector2(129, 540)
-inCave = true
 next_level = "level_1"
 next_player_x = 1800
 next_player_y = 750
 
 [node name="ToLevel2" parent="." instance=ExtResource("3_xy1qu")]
 position = Vector2(1784, 528)
-inCave = true
 next_level = "level_2"
 next_player_x = 500
 next_player_y = 650
@@ -79,3 +73,17 @@ position = Vector2(0, 1080)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
 shape = SubResource("WorldBoundaryShape2D_48ne7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1867.0
+offset_top = -1.0
+offset_right = 1907.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Door" parent="." instance=ExtResource("3_xy1qu")]
+position = Vector2(1019, 65)
+next_level = "level_4"
+next_player_x = 1000
+next_player_y = 850

@@ -22,17 +22,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -148.0
-offset_top = 22.0
-offset_right = 148.0
-offset_bottom = 84.0
+offset_left = -450.0
+offset_top = 992.0
+offset_right = -252.0
+offset_bottom = 1032.0
 grow_horizontal = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_right = 296.0
-offset_bottom = 61.0
-alignment = 1
+offset_right = 197.0
+offset_bottom = 39.0
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
@@ -43,10 +42,10 @@ layout_mode = 2
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
-offset_left = 1343.0
-offset_top = 27.0
-offset_right = 1493.0
-offset_bottom = 67.0
+offset_left = 336.0
+offset_top = 992.0
+offset_right = 486.0
+offset_bottom = 1032.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
 layout_mode = 0
@@ -63,10 +62,10 @@ layout_mode = 2
 
 [node name="Panel3" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 1143.0
-offset_top = 27.0
-offset_right = 1281.0
-offset_bottom = 67.0
+offset_left = 17.0
+offset_top = 992.0
+offset_right = 155.0
+offset_bottom = 1032.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel3"]
 layout_mode = 0
@@ -82,10 +81,10 @@ layout_mode = 2
 
 [node name="Panel4" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 1557.0
-offset_top = 27.0
-offset_right = 1695.0
-offset_bottom = 67.0
+offset_left = 178.0
+offset_top = 992.0
+offset_right = 316.0
+offset_bottom = 1032.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel4"]
 layout_mode = 0

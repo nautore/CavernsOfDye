@@ -43,19 +43,33 @@ shape = SubResource("WorldBoundaryShape2D_nsrm0")
 position = Vector2(736, 821)
 
 [node name="Enemy2" parent="." instance=ExtResource("1_6iamk")]
-position = Vector2(391, 434)
+position = Vector2(601, 413)
 
 [node name="Enemy3" parent="." instance=ExtResource("1_6iamk")]
-position = Vector2(534, 137)
+position = Vector2(1265, 684)
 
 [node name="Enemy4" parent="." instance=ExtResource("1_6iamk")]
 position = Vector2(1169, 222)
 
 [node name="Insect" parent="." instance=ExtResource("2_nsrm0")]
-position = Vector2(1010, 248)
+position = Vector2(918, 520)
 
 [node name="Door" parent="." instance=ExtResource("3_nsrm0")]
 position = Vector2(1800, 516)
 next_level = "level_0"
 next_player_x = 520
 next_player_y = 500
+
+[node name="Door2" parent="." instance=ExtResource("3_nsrm0")]
+position = Vector2(952, 62)
+next_level = "level_3"
+next_player_x = 1000
+next_player_y = 800
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1867.0
+offset_top = -1.0
+offset_right = 1907.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 50
+text = "1"

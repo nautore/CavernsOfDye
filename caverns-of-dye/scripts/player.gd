@@ -17,10 +17,11 @@ var dash_timer = 0
 
 @export var insects_captured:int = 0
 @export var gold:int = 40
-@export var nets:int = 5
-@export var max_nets:int = 5
+@export var nets:int = 3
+@export var max_nets:int = 3
 @export var health:int = 100
 @export var max_health:int = 100
+@export var in_debt:bool = false
 
 @onready var animation = $AnimatedSprite2D
 @onready var shoot_source = $ShootSource
@@ -112,6 +113,8 @@ func _physics_process(delta: float) -> void:
 			can_shoot = false
 			is_lethal = false
 			animation.play("shoot2")
+		else:
+			GlobalAudio.play_sound("denied")
 
 	move_and_slide()
 	
@@ -170,6 +173,8 @@ func connect_insects():
 
 func kill():
 	health = 1
+	max_nets = 3
+	max_health = 100
 	get_hit()
 		
 func _on_invincibility_timer_timeout() -> void:

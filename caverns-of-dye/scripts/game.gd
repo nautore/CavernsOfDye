@@ -2,7 +2,10 @@ class_name Game
 extends Node2D
 
 @export var world_root : Node2D
-@onready var player = $/root/Game/WorldRoot/Player
+@onready var player = $/root/Game/WorldRoot/Player as Player
+@onready var net_upgrade_button: Button = $CanvasLayer/SaveLoadPanel/VBoxContainer/NetUpgradeButton
+@onready var heal_button: Button = $CanvasLayer/SaveLoadPanel/VBoxContainer/HealButton
+
 var current_scene
 
 func _ready() -> void:
@@ -27,15 +30,27 @@ func change_scene(new_scene: String):
 	# reset enteredLevels when entering safe_zone
 	# also reset health and nets
 	if(new_scene == "safe_zone"):
+		net_upgrade_button.disabled = false
+		heal_button.disabled = false
 		for key in Global.enteredLevels:
 			Global.enteredLevels.set(key, false)
-		player.health = player.max_health
+		#player.health = player.max_health
 		player.nets = player.max_nets
 		player.gold = player.gold - 20
+		if(player.in_debt):
+			player.gold = player.gold + (player.insects_captured * 10)
+			GlobalAudio.play_sound("trade")
+			player.insects_captured = 0
+			if(player.gold < 0):
+				player.kill()
 		if(player.gold < 0):
-			player.kill()
+			player.in_debt = true
+		else:
+			player.in_debt = false
 		return
-	
+	else:
+		net_upgrade_button.disabled = true
+		heal_button.disabled = true
 	# cleared already entered levels of enemies and insects
 	if(Global.enteredLevels.get(new_scene) == true):
 		var enemies = get_tree().get_nodes_in_group("enemies")
@@ -46,3 +61,19 @@ func change_scene(new_scene: String):
 			insect.queue_free()
 	else:
 		Global.enteredLevels.set(new_scene, true)
+
+
+func _on_net_upgrade_button_pressed() -> void:
+	if(player.gold >= 40):
+		player.gold = player.gold - 40
+		player.max_nets = player.max_nets + 1
+		player.nets = player.max_nets
+	else:
+		GlobalAudio.play_sound("denied")
+
+func _on_heal_button_pressed() -> void:
+	if(player.gold >= 20 && player.health < player.max_health):
+		player.gold = player.gold - 20
+		player.health = player.max_health
+	else:
+		GlobalAudio.play_sound("denied")

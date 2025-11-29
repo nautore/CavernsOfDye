@@ -34,14 +34,24 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "CONTROLS:
 WASD: movement
+Space: dash
 Left Click: shoot arrow
 Right Click: shoot net
 F: interact
 Escape: exit to main menu
 
 OBJECTIVE:
-Head into the cave, eliminate enemies with arrows, and capture insects with nets (do not shoot with arrows).
-Exit the cave and sell insects by interacting with the merchant to gain gold."
+Enter the cave through the entrance on the right side of the starting zone.
+Eliminate enemy slimes with arrows and capture insects with nets (do not shoot the insects with arrows).
+Exit the cave and sell insects by interacting with the merchant to gain gold (each insect is worth 10 gold).
+Keep adventuring and gain as much gold as you can.
+
+TIPS:
+You can only stay in the cave for 1 minute, time left is displayed on the bar at the bottom of the screen.
+You can only exit a room in the cave once all slimes have been eliminated.
+You have a limited number of nets, but they will replenish once you exit the cave.
+Each time you leave the cave and return to the starting zone, you must pay a 20 gold fee.
+If you go into negative gold and then do not capture enough insects in the next run to go back to at least 0 gold, you will lose."
 
 [node name="BackButton" type="Button" parent="PanelContainer/GameGuideContainer"]
 layout_mode = 2
