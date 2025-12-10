@@ -90,6 +90,7 @@ func _physics_process(delta: float) -> void:
 		#saver_loader.save_game()
 		#get_tree().quit()
 		GlobalAudio.play_music("menu_music")
+		Global.days_survived = 0
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		
 	if(Input.is_action_just_pressed("interact")):
@@ -164,6 +165,9 @@ func get_hit():
 		if(health <= 0):
 			dying = true
 			animation.play("death")
+			Global.high_score = max(Global.high_score, Global.days_survived)
+			Global.days_survived = 0
+			$/root/Game/CanvasLayer/UI.full_bar_reset()
 			#get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 			
 func connect_insects():
@@ -176,7 +180,6 @@ func kill():
 	max_nets = 3
 	max_health = 100
 	get_hit()
-		
 func _on_invincibility_timer_timeout() -> void:
 	is_invincible = false
 	animation.self_modulate = Color(1, 1, 1, 1)

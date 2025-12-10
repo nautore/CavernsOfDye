@@ -58,12 +58,17 @@ text = "Load"
 [node name="NetUpgradeButton" type="Button" parent="CanvasLayer/SaveLoadPanel/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-text = "Buy more nets: 40 gold"
+text = "Buy more nets: 15 gold"
 
 [node name="HealButton" type="Button" parent="CanvasLayer/SaveLoadPanel/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 text = "Heal: 20 gold"
+
+[node name="LightUpgradeButton" type="Button" parent="CanvasLayer/SaveLoadPanel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Upgrade torch: 30 gold"
 
 [node name="Utilities" type="Node" parent="."]
 
@@ -76,3 +81,4 @@ metadata/_custom_type_script = "uid://lwrr074pyufe"
 [connection signal="pressed" from="CanvasLayer/SaveLoadPanel/VBoxContainer/LoadButton" to="Utilities/SaverLoader" method="_on_load_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/SaveLoadPanel/VBoxContainer/NetUpgradeButton" to="." method="_on_net_upgrade_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/SaveLoadPanel/VBoxContainer/HealButton" to="." method="_on_heal_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SaveLoadPanel/VBoxContainer/LightUpgradeButton" to="." method="_on_light_upgrade_button_pressed"]

@@ -5,6 +5,7 @@ extends Node2D
 @onready var player = $/root/Game/WorldRoot/Player as Player
 @onready var net_upgrade_button: Button = $CanvasLayer/SaveLoadPanel/VBoxContainer/NetUpgradeButton
 @onready var heal_button: Button = $CanvasLayer/SaveLoadPanel/VBoxContainer/HealButton
+@onready var light_button: Button = $CanvasLayer/SaveLoadPanel/VBoxContainer/LightUpgradeButton
 
 var current_scene
 
@@ -32,11 +33,13 @@ func change_scene(new_scene: String):
 	if(new_scene == "safe_zone"):
 		net_upgrade_button.disabled = false
 		heal_button.disabled = false
+		light_button.disabled = false
 		for key in Global.enteredLevels:
 			Global.enteredLevels.set(key, false)
 		#player.health = player.max_health
 		player.nets = player.max_nets
 		player.gold = player.gold - 20
+		Global.days_survived += 1
 		if(player.in_debt):
 			player.gold = player.gold + (player.insects_captured * 10)
 			GlobalAudio.play_sound("trade")
@@ -51,6 +54,7 @@ func change_scene(new_scene: String):
 	else:
 		net_upgrade_button.disabled = true
 		heal_button.disabled = true
+		light_button.disabled = true
 	# cleared already entered levels of enemies and insects
 	if(Global.enteredLevels.get(new_scene) == true):
 		var enemies = get_tree().get_nodes_in_group("enemies")
@@ -64,10 +68,11 @@ func change_scene(new_scene: String):
 
 
 func _on_net_upgrade_button_pressed() -> void:
-	if(player.gold >= 40):
-		player.gold = player.gold - 40
+	if(player.gold >= 15):
+		player.gold = player.gold - 15
 		player.max_nets = player.max_nets + 1
 		player.nets = player.max_nets
+		GlobalAudio.play_sound("trade")
 	else:
 		GlobalAudio.play_sound("denied")
 
@@ -75,5 +80,15 @@ func _on_heal_button_pressed() -> void:
 	if(player.gold >= 20 && player.health < player.max_health):
 		player.gold = player.gold - 20
 		player.health = player.max_health
+		GlobalAudio.play_sound("trade")
 	else:
 		GlobalAudio.play_sound("denied")
+
+
+func _on_light_upgrade_button_pressed() -> void:
+	if(player.gold >= 30):
+		player.gold = player.gold - 30
+		$/root/Game/CanvasLayer/UI.duration_seconds += 10
+		GlobalAudio.play_sound("trade")
+	else:
+		GlobalAudio.play_sound("denied")	

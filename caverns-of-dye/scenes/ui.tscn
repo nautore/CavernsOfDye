@@ -109,3 +109,49 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_nt7q6")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x4jx1")
+
+[node name="Panel5" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 992.0
+offset_right = -22.0
+offset_bottom = 1032.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel5"]
+layout_mode = 0
+offset_right = 197.0
+offset_bottom = 39.0
+
+[node name="Label" type="Label" parent="Panel5/HBoxContainer"]
+layout_mode = 2
+text = "Days Survived:"
+
+[node name="Label2" type="Label" parent="Panel5/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel6" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 8.0
+offset_top = 992.0
+offset_right = 206.0
+offset_bottom = 1032.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel6"]
+layout_mode = 0
+offset_right = 197.0
+offset_bottom = 39.0
+
+[node name="Label" type="Label" parent="Panel6/HBoxContainer"]
+layout_mode = 2
+text = "High Score:"
+
+[node name="Label2" type="Label" parent="Panel6/HBoxContainer"]
+layout_mode = 2
