@@ -1,9 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://cq5svdh3caf26"]
+[gd_scene load_steps=23 format=3 uid="uid://cq5svdh3caf26"]
 
 [ext_resource type="Script" uid="uid://suqxgkf4tv8t" path="res://scripts/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://b42vyenrmq7l4" path="res://assets/Characters/Enemies/SlimeDeathSheet.png" id="2_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://7jk6y2xyygsl" path="res://assets/Characters/Enemies/SlimeWalkSheet.png" id="2_md0e3"]
-[ext_resource type="AudioStream" uid="uid://bonwl3uuv0ewo" path="res://assets/sfx/Bow Impact Hit 1.ogg" id="3_4ra3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ipns3"]
 atlas = ExtResource("2_5uy6h")
@@ -137,8 +136,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
-radius = 21.023796
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ra3w"]
+radius = 33.0
+height = 84.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 motion_mode = 1
@@ -151,10 +151,8 @@ sprite_frames = SubResource("SpriteFrames_md484")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_md0e3")
-
-[node name="sfx_hit" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_4ra3w")
-volume_db = -9.838
+position = Vector2(0, -4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4ra3w")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

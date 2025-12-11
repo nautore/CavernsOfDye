@@ -10,4 +10,6 @@ position = Vector2(975, 188)
 
 [node name="Door" parent="." instance=ExtResource("2_b40x8")]
 position = Vector2(1781, 463)
-next_level = "test_level"
+next_level = "level_0"
+next_player_x = 1000
+next_player_y = 820

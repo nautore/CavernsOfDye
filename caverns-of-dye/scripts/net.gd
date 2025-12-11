@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 1000
+const SPEED = 1200
 	
 
 func _physics_process(delta: float) -> void:

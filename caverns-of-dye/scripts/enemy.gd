@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = 40
+var SPEED = 150
 var health = 100
 var dying = false
 @onready var player = $/root/Game/WorldRoot/Player
@@ -24,6 +24,7 @@ func get_hit():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if($AnimatedSprite2D.animation == "death"):
 		queue_free()
-		
+		# give more time upon enemy death
+		$/root/Game/CanvasLayer/UI.elapsed -= 0.5
 func _on_hit_timer_timeout() -> void:
 	$AnimatedSprite2D.self_modulate = Color(1, 1, 1, 1)

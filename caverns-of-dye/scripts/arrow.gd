@@ -1,7 +1,7 @@
 extends Area2D
 
 #var direction: Vector2
-const SPEED = 1000
+const SPEED = 1200
 	
 
 func _physics_process(delta: float) -> void:
